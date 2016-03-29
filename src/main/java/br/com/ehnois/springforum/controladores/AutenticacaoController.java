@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import br.com.ehnois.springforum.entidades.Usuario;
+
 @Controller
 public class AutenticacaoController {
 
@@ -20,7 +22,12 @@ public class AutenticacaoController {
 		usuario.setUltimoLogin(new Date());
 		daoUsuario.persistir(usuario);
 		sessao.setAttribute("usuario", usuario);
-		}		**/
-		return "redirect:/";
+		}		
+		**/
+	    Usuario usuario = new Usuario();
+	    usuario.setLogin(login);
+	    usuario.setSenha(senha);
+	    sessao.setAttribute("usuario", usuario);
+		return "redirect:/usuario/autenticado";
 	}
 }
