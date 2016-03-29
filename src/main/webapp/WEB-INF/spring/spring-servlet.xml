@@ -7,15 +7,8 @@ http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.1.xsd
 http://www.springframework.org/schema/mvc
-http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
-
-	<mvc:resources mapping="/recursos/**" 
-			location="/recursos/" 
-			cache-period="120"/>
-
-	<mvc:annotation-driven />
-
-	<context:annotation-config />
+http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd"
+>
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
@@ -37,5 +30,11 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
 	</bean>
 
 	<context:component-scan base-package="br.com.ehnois.springforum.controladores"/>
+
+	<mvc:resources mapping="/recursos/**" location="/recursos/" cache-period="120"/>
+
+	<mvc:annotation-driven />
+
+	<context:annotation-config />
 
 </beans>
