@@ -1,11 +1,20 @@
 package br.com.ehnois.springforum.entidades;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Usuario {
-	
+    @Size(max=128) @NotNull @NotEmpty
 	private String nome;
-	  
+	
+    @Email(message="Isto não é um e-mail válido") @NotNull @NotEmpty
 	private String email;
-	  
+	
+    @NotNull @NotEmpty
+    @Size(min=8, max=32, message="Login muito curto ou muito longo")
 	private String login;
 	  
 	private String senha;
