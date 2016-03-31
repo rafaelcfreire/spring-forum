@@ -5,10 +5,12 @@
   
 	<definition name="main" template="/views/templates/main.jsp">
 		<put-attribute name="titulo" value="Spring Forum"/>
+		<!--  
 		<put-attribute name="cabecalho" value="/views/templates/cabecalho.jsp"/>
+		-->
 		<put-attribute name="rodape" value="/views/templates/rodape.jsp"/>
 	</definition>
-
+<!--  
 	<definition name="index" extends="main" >
 		<put-attribute name="conteudo" value="/views/login.jsp"/>
 	</definition>
@@ -17,5 +19,5 @@
 		<put-attribute name="conteudo" value="/views/signup.jsp"/>
 		<put-attribute name="titulo" value="Bem vindo(a)!"/>
 	</definition>
-	
+	-->
 </tiles-definitions>
