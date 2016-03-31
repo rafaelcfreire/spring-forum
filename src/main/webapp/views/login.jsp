@@ -6,3 +6,5 @@
 	<input type="password" name="senha"/>
 	<input type="submit" value="Entrar"/>
 </form>
+
+<a href="/spring-forum/registro">Criar novo usuário</a>
