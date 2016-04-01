@@ -45,20 +45,20 @@ public class HomeController {
 			processarAvatar(usuario, avatar);
 		}		
 		sessao.setAttribute("usuario", usuario);
-		return "redirect:/";
+		return "redirect:/usuario/show";
 	}
 	
 	private void processarAvatar(Usuario usuario, MultipartFile avatar) {
-		File diretorio = new File("/springForum/avatares");
+		File diretorio = new File("springForum/avatares");
 		if (! diretorio.exists()) {
 			diretorio.mkdirs();
 		}
 		try {
-			FileOutputStream arquivo = new FileOutputStream(diretorio.getAbsolutePath() + "/" + usuario.getLogin() + ".png");
+		  FileOutputStream arquivo = new FileOutputStream(diretorio.getAbsolutePath() + "/" + usuario.getLogin() + ".png");
 			arquivo.write(avatar.getBytes());
 			arquivo.close();
 		} catch (IOException ex) {
-			
+			System.out.println("Failed to write avatar.");
 		}
 	}	
 }
