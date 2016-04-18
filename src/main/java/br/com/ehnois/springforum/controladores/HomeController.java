@@ -45,7 +45,7 @@ public class HomeController {
 			processarAvatar(usuario, avatar);
 		}		
 		sessao.setAttribute("usuario", usuario);
-		return "redirect:/usuario/show";
+		return "/usuario/show";
 	}
 	
 	private void processarAvatar(Usuario usuario, MultipartFile avatar) {

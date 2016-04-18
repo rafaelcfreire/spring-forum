@@ -2,22 +2,20 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 <tiles-definitions>
-  
+	
 	<definition name="main" template="/views/templates/main.jsp">
-		<put-attribute name="titulo" value="Spring Forum"/>
-		<!--  
+		<put-attribute name="titulo" value="Spring Fórum"/>
 		<put-attribute name="cabecalho" value="/views/templates/cabecalho.jsp"/>
-		-->
 		<put-attribute name="rodape" value="/views/templates/rodape.jsp"/>
 	</definition>
-<!--  
-	<definition name="index" extends="main" >
-		<put-attribute name="conteudo" value="/views/login.jsp"/>
-	</definition>
- 
-	<definition name="signup" extends="main">
-		<put-attribute name="conteudo" value="/views/signup.jsp"/>
-		<put-attribute name="titulo" value="Bem vindo(a)!"/>
-	</definition>
-	-->
+	
+    <definition name="usuario/show" extends="main">
+    	<put-attribute name="conteudo" value="/views/usuario/show.jsp"/>
+    	<put-attribute name="titulo" value="Detalhes do usuário"/>
+    </definition>
+    
+    <definition name="login" extends="main">
+    	<put-attribute name="conteudo" value="/views/login.jsp"/>
+    	<put-attribute name="titulo" value="Tela de Login"/>
+    </definition>	    	
 </tiles-definitions>
