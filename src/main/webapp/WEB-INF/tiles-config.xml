@@ -1,40 +1,23 @@
-<!-- 
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE tiles-definitions PUBLIC
-       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
-       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
-<tiles-definitions>
-	
-	<definition name="main" template="/views/templates/main.jsp">
-		<put-attribute name="titulo" value="Spring Fórum"/>
-		<put-attribute name="cabecalho" value="/views/templates/cabecalho.jsp"/>
-		<put-attribute name="rodape" value="/views/templates/rodape.jsp"/>
-	</definition>
-	
-    <definition name="usuario/show" extends="main">
-    	<put-attribute name="conteudo" value="/views/usuario/show.jsp"/>
-    	<put-attribute name="titulo" value="Detalhes do usuário"/>
-    </definition>
-    
-    <definition name="login" extends="main">
-    	<put-attribute name="conteudo" value="/views/login.jsp"/>
-    	<put-attribute name="titulo" value="Tela de Login"/>
-    </definition>	    	
-</tiles-definitions>
- -->
-<!DOCTYPE tiles-definitions PUBLIC
-       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
-       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 
   <definition name="common" template="/WEB-INF/templates/main.jsp">
-    <put-attribute name="title" value="Tiles tutorial homepage" />
-    <put-attribute name="body" value="/WEB-INF/templates/main.jsp" />
+    <put-attribute name="header" value="/WEB-INF/templates/cabecalho.jsp" />
+    <put-attribute name="body" value="" />
     <put-attribute name="footer" value="/WEB-INF/templates/rodape.jsp" />
   </definition>
 
-  <definition name="index" extends="common">
-    <put-attribute name="title" value="Tiles tutorial homepage" />
-    <put-attribute name="footer" value="/WEB-INF/templates/rodape.jsp" />
+  <definition name="registro" extends="common">
+    <put-attribute name="title" value="Insert a User" />
+    <put-attribute name="body" value="/WEB-INF/views/registro.jsp" />
+  </definition>
+
+  <definition name="usuario.show" extends="common">
+    <put-attribute name="title" value="User Details" />
+    <put-attribute name="body" value="/WEB-INF/views/usuario/show.jsp" />
   </definition>
 
 </tiles-definitions>

@@ -1,15 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" href="<c:url value="/recursos/stylesheets/estilo.css"/>"
-</head>
-
-<body>
+<div>
 	<sf:form modelAttribute="usuario" action="executarRegistro" enctype="multipart/form-data">
 		<table>
 			<tr>
@@ -62,6 +54,4 @@
 			</tr>
 		</table>
 	</sf:form>
-
-</body>
-</html>
+</div>

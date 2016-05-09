@@ -21,7 +21,7 @@ import br.com.ehnois.springforum.entidades.Usuario;
 @Controller
 public class HomeController {
 
-	@RequestMapping("/registro")
+	@RequestMapping(value="registro")
 	public String registro(Map<String, Object> model) {
 		if (model.get("usuario") == null) {
 			model.put("usuario", new Usuario());
@@ -45,7 +45,7 @@ public class HomeController {
 			processarAvatar(usuario, avatar);
 		}		
 		sessao.setAttribute("usuario", usuario);
-		return "/usuario/show";
+		return "usuario.show";
 	}
 	
 	private void processarAvatar(Usuario usuario, MultipartFile avatar) {
