@@ -1,57 +1,31 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 
-<div>
 	<sf:form modelAttribute="usuario" action="executarRegistro" enctype="multipart/form-data">
-		<table>
-			<tr>
-				<td>
-					<label for="nome">Nome:<sf:errors path="nome" cssClass="erro"/></label>
-				</td>
-				<td>
-					<sf:input path="nome"/>
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<label for="email">Email:<sf:errors path="email" cssClass="erro"/></label>
-				</td>
-				<td>
-					<sf:input path="email"/>
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<label for="login">Nome do usuário (login):<sf:errors path="login" cssClass="erro"/></label>
-				</td>
-				<td>
-					<sf:input path="login"/>
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<label for="senha">Senha:<sf:errors path="senha" cssClass="erro"/></label>			
-				</td>
-				<td>
-					<sf:password path="senha"/>			
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<label for="avatar">Avatar:</label>
-				</td>
-				<td>
-					<input type="file" name="avatar"/>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input type="submit" value="Faça parte!"/>
-				</td>	
-			</tr>
-		</table>
+		<div class="form-group">
+			<label for="nome">Nome:<sf:errors path="nome" cssClass="erro"/></label>
+			<sf:input path="nome"/>
+		</div>
+
+		<div class="form-group">
+			<label for="email">Email:<sf:errors path="email" cssClass="erro"/></label>
+			<sf:input path="email"/>
+		</div>
+
+		<div class="form-group">
+			<label for="login">Nome do usuário (login):<sf:errors path="login" cssClass="erro"/></label>
+			<sf:input path="login"/>
+		</div>					
+
+		<div class="form-group">
+			<label for="senha">Senha:<sf:errors path="senha" cssClass="erro"/></label>			
+			<sf:password path="senha"/>			
+		</div>			
+
+		<div class="form-group">
+			<label for="avatar">Avatar:</label>
+			<input type="file" name="avatar"/>
+		</div>
+					
+		<button type="submit" class="btn btn-default">Submit</button>			
 	</sf:form>
-</div>

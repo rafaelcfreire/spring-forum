@@ -1,4 +1,7 @@
-<div id="rodape" class="row">
-<p class="twelve columns"><b>Spring F&oacute;rum</b>
-Baseado no livro <a href="http://www.casadocodigo.com.br/products/spring">Virando o Jogo com Spring Framework</a></p>
-</div>
+<footer id="rodape" class="navbar-inverse navbar-fixed-bottom">
+	<div class="container">
+		<div class="nav navbar-nav navbar-right">
+			<p class="navbar-brand">Developed by <a href="http://rafaelcfreire.github.io">Rafael Freire</a></p>
+		</div>
+	</div>
+</footer>

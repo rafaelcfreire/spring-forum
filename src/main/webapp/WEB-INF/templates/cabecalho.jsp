@@ -1,12 +1,13 @@
-<div style="background: #E0E0E0; height: 55px; padding: 5px;">
-  <div style="float: left">
-     <h1>Header</h1>
-  </div>
- 
-  <div style="float: right; padding: 10px; text-align: right;">
- 
-     Search <input name="search">
- 
-  </div>
- 
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-brand">
+		   Header
+		</div>
+		
+		<div class="nav navbar-nav navbar-right">
+			<div class="navbar-brand">
+			   Search <input name="search">
+			</div>		
+		</div>
+	</div>
 </div>
