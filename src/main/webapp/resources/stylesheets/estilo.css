@@ -4,6 +4,10 @@ body {
     background-color: #f5f5f5;
 }
 
+.borderedForm {
+	border: 1px solid #d6d6d6;
+}
+
 .form-narrow {
     max-width: 490px;
     padding: 19px 29px 29px;

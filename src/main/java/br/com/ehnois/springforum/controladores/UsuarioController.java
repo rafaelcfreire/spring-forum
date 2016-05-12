@@ -3,6 +3,7 @@ package br.com.ehnois.springforum.controladores;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,6 +19,7 @@ import br.com.ehnois.springforum.entidades.Usuario;
 @SessionAttributes("usuario")
 public class UsuarioController {
 
+  
   @RequestMapping("/usuario/autenticado")
   public ModelAndView infoAutenticado(@ModelAttribute("usuario") Usuario usuario) {
     ModelAndView mav = new ModelAndView("usuario/show");
@@ -40,5 +42,11 @@ public class UsuarioController {
     input.close();
     
     return resultado;    
+  }
+  
+  @RequestMapping("/usuario/posts/{login}")
+  public String topicoUsuario(@PathVariable("login") String login, Map<String, Object> model) {
+	  //model.put("topicos", )
+	  return "usuario/posts";
   }
 }

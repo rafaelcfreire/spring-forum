@@ -13,7 +13,7 @@
 </head>
 <body>
 	<tiles:insertAttribute name="header"/>
-	<div class="container">
+	<div class="container borderedForm">
 		<tiles:insertAttribute name="body"/>
 	</div>
 	<tiles:insertAttribute name="footer"/>
