@@ -28,6 +28,26 @@
 		<version>${spring.versao}</version>
 	</dependency>
 
+	<!-- Suporte ao Hibernate e JPA -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+		<version>${spring.versao}</version>
+	</dependency>
+		
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+		<version>${spring.versao}</version>
+	</dependency>
+
+	<!-- O Driver de Acesso ao MySQL -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.1.18</version>
+	</dependency>
+
 	<dependency>
 		<groupId>jstl</groupId>
 		<artifactId>jstl</artifactId>
@@ -76,12 +96,21 @@
 		<artifactId>commons-io</artifactId>
 		<version>2.1</version>
 	</dependency>
+	
 	<dependency>
 		<groupId>org.slf4j</groupId>
 		<artifactId>slf4j-log4j12</artifactId>
 		<version>1.7.21</version>
 	</dependency>
+
+	<!-- Inclusão do Hibernate -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>4.1.7.Final</version>
+	</dependency>  
   </dependencies>
+  
   <build>
     <finalName>spring-forum</finalName>
   </build>

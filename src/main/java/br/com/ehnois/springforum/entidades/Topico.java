@@ -3,6 +3,10 @@ package br.com.ehnois.springforum.entidades;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity @Table(name="topico")
 public class Topico implements Serializable {
 
 	/**

@@ -2,7 +2,11 @@ package br.com.ehnois.springforum.entidades;
 
 import java.io.Serializable;
 
-public class Assunto implements Serializable {
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity @Table(name="assunto")
+public class Assunto implements Serializable, Comparable<Assunto> {
 
 	/**
 	 * 
@@ -27,5 +31,9 @@ public class Assunto implements Serializable {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public int compareTo(Assunto o) {
+		return getNome().compareTo(o.getNome());
 	}
 }

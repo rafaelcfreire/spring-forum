@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,13 +15,38 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.com.ehnois.springforum.dao.DAOTopico;
+import br.com.ehnois.springforum.dao.DAOUsuario;
 import br.com.ehnois.springforum.entidades.Usuario;
 
+@Component
 @Controller("usuario")
 @SessionAttributes("usuario")
 public class UsuarioController {
 
+  @Autowired
+  private DAOTopico daoTopico;
   
+  /*
+  @Autowired
+  private DAOUsuario daoUsuario;
+  **/
+  public DAOTopico getDaoTopico() {
+	return daoTopico;
+  }
+
+  public void setDaoTopico(DAOTopico daoTopico) {
+	this.daoTopico = daoTopico;
+  }
+/*
+  public DAOUsuario getDaoUsuario() {
+	return daoUsuario;
+  }
+
+  public void setDaoUsuario(DAOUsuario daoUsuario) {
+	this.daoUsuario = daoUsuario;
+  }
+**/
   @RequestMapping("/usuario/autenticado")
   public ModelAndView infoAutenticado(@ModelAttribute("usuario") Usuario usuario) {
     ModelAndView mav = new ModelAndView("usuario/show");
@@ -46,7 +73,7 @@ public class UsuarioController {
   
   @RequestMapping("/usuario/posts/{login}")
   public String topicoUsuario(@PathVariable("login") String login, Map<String, Object> model) {
-	  //model.put("topicos", )
+	  //model.put("topicos", getDaoTopico().getTopicosPorAutor(getDaoUsuario().getUsuario(login)));	
 	  return "usuario/posts";
   }
 }

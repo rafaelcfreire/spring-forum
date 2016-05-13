@@ -35,7 +35,25 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd"
 		<property name="maxUploadSize" value="50000000"/>
 	</bean>	
 
-	<context:component-scan base-package="br.com.ehnois.springforum.controladores"/>
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="username" value="sf"/>
+		<property name="password" value="sf"/>
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/spring_forum"/>
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>	
+	</bean>		
+
+	<context:component-scan base-package="br.com.ehnois.springforum"/>
 
 	<mvc:resources mapping="/resources/**" location="/resources/"/>
 
