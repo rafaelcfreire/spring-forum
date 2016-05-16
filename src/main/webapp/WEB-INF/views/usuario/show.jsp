@@ -32,3 +32,16 @@
 	<div class="two columns"><b>E-mail:</b></div>
 	<div class="ten columns"><a href="mailto:${usuario.email}">${usuario.email}</a></div>
 </div>
+<br/>
+<div class="row">
+	<h4>&Uacute;ltimos posts</h4>
+	<a href="javascript:exporPosts('${usuario.login}')">Expor posts</a>
+	<div id="posts"></div>
+</div>
+
+<script type="text/javascript">
+	function exporPosts(login) {
+		var url = "<c:url value="/usuario/posts/"/>" + login
+		$("#posts").load(url)
+	}
+</script>

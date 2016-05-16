@@ -25,4 +25,6 @@
     <put-attribute name="body" value="/WEB-INF/views/login.jsp" />
   </definition>
 
+  <definition name="usuario/posts" template="/WEB-INF/views/usuario/postsUsuario.jsp"/>
+
 </tiles-definitions>

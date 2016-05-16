@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import br.com.ehnois.springforum.dao.DAOUsuario;
 import br.com.ehnois.springforum.entidades.Usuario;
 
-@Component("daoUsuario")
+@Component("br.com.ehnois.springforum.dao.DAOUsuario")
 public class MockDAOUsuario extends MockDAOBase<Usuario> implements DAOUsuario {
 
 	public List<Usuario> list(int offset, int max) {

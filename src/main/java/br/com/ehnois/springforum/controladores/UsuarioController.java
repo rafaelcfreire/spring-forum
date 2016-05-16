@@ -3,6 +3,7 @@ package br.com.ehnois.springforum.controladores;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.ehnois.springforum.dao.DAOTopico;
 import br.com.ehnois.springforum.dao.DAOUsuario;
+import br.com.ehnois.springforum.entidades.Topico;
 import br.com.ehnois.springforum.entidades.Usuario;
 
 @Component
@@ -27,10 +29,9 @@ public class UsuarioController {
   @Autowired
   private DAOTopico daoTopico;
   
-  /*
   @Autowired
   private DAOUsuario daoUsuario;
-  **/
+
   public DAOTopico getDaoTopico() {
 	return daoTopico;
   }
@@ -38,7 +39,7 @@ public class UsuarioController {
   public void setDaoTopico(DAOTopico daoTopico) {
 	this.daoTopico = daoTopico;
   }
-/*
+
   public DAOUsuario getDaoUsuario() {
 	return daoUsuario;
   }
@@ -46,7 +47,7 @@ public class UsuarioController {
   public void setDaoUsuario(DAOUsuario daoUsuario) {
 	this.daoUsuario = daoUsuario;
   }
-**/
+
   @RequestMapping("/usuario/autenticado")
   public ModelAndView infoAutenticado(@ModelAttribute("usuario") Usuario usuario) {
     ModelAndView mav = new ModelAndView("usuario/show");
@@ -73,7 +74,14 @@ public class UsuarioController {
   
   @RequestMapping("/usuario/posts/{login}")
   public String topicoUsuario(@PathVariable("login") String login, Map<String, Object> model) {
-	  //model.put("topicos", getDaoTopico().getTopicosPorAutor(getDaoUsuario().getUsuario(login)));	
+	  model.put("topicos", getDaoTopico().getTopicosPorAutor(getDaoUsuario().getUsuario(login)));	
 	  return "usuario/posts";
+  }
+  
+  @RequestMapping("/usuario/postsJSON/{login}")
+  @ResponseBody
+  public List<Topico> topicosUsuarioJson(@PathVariable("login") String login) {
+	  Usuario usuario = getDaoUsuario().getUsuario(login);
+	  return getDaoTopico().getTopicosPorAutor(usuario);
   }
 }
