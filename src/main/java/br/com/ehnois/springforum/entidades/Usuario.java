@@ -21,8 +21,8 @@ public class Usuario {
 	private String login;
 	  
 	private String senha;
-
-	public String getNome() {
+	
+    public String getNome() {
 		return nome;
 	}
 	

@@ -13,7 +13,7 @@ public class MockDAOAssunto extends MockDAOBase<Assunto> implements DAOAssunto {
 
 	private List<Assunto> todos;
 	
-	public List<Assunto> list(int offset, int max) {
+	public List<Assunto> list() {
 		if (todos == null) {
 			todos = new ArrayList<Assunto>();
 			String[] assuntos = {"Container IoC", "AOP", "Spring MVC", "ORM", "Spring Batch", "Spring WebFlow"};

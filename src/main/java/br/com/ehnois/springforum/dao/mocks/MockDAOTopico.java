@@ -27,7 +27,7 @@ public class MockDAOTopico extends MockDAOBase<Topico> implements DAOTopico{
 			"Como funciona a requisicao no MVC?", 
 			"Aonde uso o Spring?"};
 
-	public List<Topico> list(int offset, int max) {
+	public List<Topico> list() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -28,7 +28,7 @@ public class UsuarioController {
 
   @Autowired
   private DAOTopico daoTopico;
-  
+
   @Autowired
   private DAOUsuario daoUsuario;
 
