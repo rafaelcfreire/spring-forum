@@ -1,12 +1,12 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<div style="background: #48762A;">
+<div>
 <div class="chamada row">
-		
-			<div class="twelve columns">
+
+			<div class="twelve columns" style="background: #48762A;">
 				<h3 style="color:white;">Detalhes do usu&aacute;rio</h3>
 			</div>
-		
+
 </div>
 </div>
 <div class="row">

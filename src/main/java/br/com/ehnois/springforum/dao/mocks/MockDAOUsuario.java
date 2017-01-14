@@ -34,17 +34,17 @@ public class MockDAOUsuario extends MockDAOBase<Usuario> implements DAOUsuario {
       usuario2.setLogin("rafaelcfreire");
       usuario2.setSenha("12345");
 
-      conjuntoUsuarios.put(usuario.getLogin(), usuario);
-      conjuntoUsuarios.put(usuario.getLogin(), usuario);
-      conjuntoUsuarios.put(usuario.getLogin(), usuario);
+      conjuntoUsuarios.put(usuario.getEmail(), usuario);
+      conjuntoUsuarios.put(usuario.getEmail(), usuario);
+      conjuntoUsuarios.put(usuario.getEmail(), usuario);
     }
 
 	public List<Usuario> list() {
 		return new ArrayList<Usuario>(conjuntoUsuarios.values());
 	}
 
-	public Usuario getUsuario(String login) {
-		return conjuntoUsuarios.get(login);
+	public Usuario getUsuario(String email) {
+		return conjuntoUsuarios.get(email);
 	}
 
 	@Override

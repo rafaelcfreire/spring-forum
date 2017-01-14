@@ -17,20 +17,17 @@ public class AutenticacaoController {
 
     @Autowired
     private DAOUsuario daoUsuario;
-    
+
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String login (@RequestParam("login") String login, @RequestParam("senha") String senha, HttpSession sessao) {
-		Usuario usuario = daoUsuario.getUsuario(login);
+	public String login (@RequestParam("email") String email, @RequestParam("senha") String senha, HttpSession sessao) {
+		Usuario usuario = daoUsuario.getUsuario(email);
 		if (usuario == null) {
-		  return "redirect:loginFalho";
-		} else {
-    		daoUsuario.persistir(usuario);
-    		sessao.setAttribute("usuario", usuario);
-		}		
-	    sessao.setAttribute("usuario", usuario);
-		return "redirect:/usuario/autenticado";
+		  return "redirect:/loginFalho";
+		}
+    	sessao.setAttribute("usuario", usuario);
+    	return "usuarioAutenticado";
 	}
-	
+
 	@RequestMapping(value="/loginFalho")
 	public ModelAndView retornaLoginFalho() {
 	  ModelAndView mav = new ModelAndView("loginFalho");

@@ -1,7 +1,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container">
 		<div class="navbar-brand">
-		   Header
+		   Temporary Header
 		</div>
 		
 		<div class="nav navbar-nav navbar-right">

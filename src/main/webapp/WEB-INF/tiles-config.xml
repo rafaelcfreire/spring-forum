@@ -4,26 +4,31 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 
-  <definition name="common" template="/WEB-INF/views/templates/main.jsp">
+  <definition name="main" template="/WEB-INF/views/templates/main.jsp">
     <put-attribute name="header" value="/WEB-INF/views/templates/cabecalho.jsp" />
-    <put-attribute name="body" value="" />
     <put-attribute name="footer" value="/WEB-INF/views/templates/rodape.jsp" />
   </definition>
 
-  <definition name="registro" extends="common">
+  <definition name="registro" extends="main">
     <put-attribute name="title" value="Insert a User" />
     <put-attribute name="body" value="/WEB-INF/views/registro.jsp" />
   </definition>
 
-  <definition name="usuario.show" extends="common">
+  <definition name="usuarioAutenticado" extends="main">
     <put-attribute name="title" value="User Details" />
     <put-attribute name="body" value="/WEB-INF/views/usuario/show.jsp" />
   </definition>
 
-  <definition name="login" extends="common">
+  <definition name="login" extends="main">
     <put-attribute name="title" value="User Details" />
     <put-attribute name="body" value="/WEB-INF/views/login.jsp" />
   </definition>
+
+  <definition name="loginFalho" template="/WEB-INF/views/templates/initialPage.jsp">
+    <put-attribute name="body" value="/WEB-INF/views/loginFalho.jsp" />
+  </definition>
+
+
 
   <definition name="usuario/posts" template="/WEB-INF/views/usuario/postsUsuario.jsp"/>
 

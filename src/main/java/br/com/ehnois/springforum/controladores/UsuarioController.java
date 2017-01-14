@@ -47,13 +47,6 @@ public class UsuarioController {
   public void setDaoUsuario(DAOUsuario daoUsuario) {
 	this.daoUsuario = daoUsuario;
   }
-
-  @RequestMapping("/usuario/autenticado")
-  public ModelAndView infoAutenticado(@ModelAttribute("usuario") Usuario usuario) {
-    ModelAndView mav = new ModelAndView("usuario/show");
-    mav.getModel().put("usuario", usuario);
-    return mav;
-  }
   
   @RequestMapping("/usuario/avatar/{login}")
   @ResponseBody

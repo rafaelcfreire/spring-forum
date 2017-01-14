@@ -4,6 +4,6 @@ import br.com.ehnois.springforum.entidades.Usuario;
 
 public interface DAOUsuario extends DAOBase<Usuario>{
 
-	public Usuario getUsuario(String login);
+	public Usuario getUsuario(String email);
 
 }
