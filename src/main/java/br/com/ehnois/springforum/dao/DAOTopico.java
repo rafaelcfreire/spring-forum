@@ -2,9 +2,9 @@ package br.com.ehnois.springforum.dao;
 
 import java.util.List;
 
-import br.com.ehnois.springforum.entidades.Assunto;
-import br.com.ehnois.springforum.entidades.Topico;
-import br.com.ehnois.springforum.entidades.Usuario;
+import br.com.ehnois.springforum.entity.Assunto;
+import br.com.ehnois.springforum.entity.Topico;
+import br.com.ehnois.springforum.entity.Usuario;
 
 public interface DAOTopico extends DAOBase<Topico> {
 

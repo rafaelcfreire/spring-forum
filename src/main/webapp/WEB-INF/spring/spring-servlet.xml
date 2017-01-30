@@ -2,6 +2,7 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns:context="http://www.springframework.org/schema/context"
 xmlns:mvc="http://www.springframework.org/schema/mvc"
+xmlns:p="http://www.springframework.org/schema/p"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/context
@@ -9,13 +10,37 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd
 http://www.springframework.org/schema/mvc
 http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd"
 >
+
+	<context:component-scan base-package="br.com.ehnois.springforum"/>
+
+	<mvc:resources mapping="/resources/**" location="/resources/"/>
+
+	<mvc:annotation-driven />
+
+	<context:annotation-config />
+
   <!-- 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
 		<property name="prefix" value="/WEB-INF/views/"/>
 		<property name="suffix" value=".jsp"/>
 	</bean>
- -->
+
+	<bean id="messageSource"
+        class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:messages" />
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean> 	
+ 
+ --> 	
+ 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" p:basename="messages"/>
+
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" p:defaultLocale="en"/>
+	    
+	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="language"/>
+	</mvc:interceptors>
+	    
 	<!-- TILES -->
 	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<property name="definitions">
@@ -51,13 +76,5 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd"
 			</props>
 		</property>	
 	</bean>		
-
-	<context:component-scan base-package="br.com.ehnois.springforum"/>
-
-	<mvc:resources mapping="/resources/**" location="/resources/"/>
-
-	<mvc:annotation-driven />
-
-	<context:annotation-config />
 
 </beans>

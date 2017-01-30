@@ -1,6 +1,6 @@
 package br.com.ehnois.springforum.dao;
 
-import br.com.ehnois.springforum.entidades.Usuario;
+import br.com.ehnois.springforum.entity.Usuario;
 
 public interface DAOUsuario extends DAOBase<Usuario>{
 

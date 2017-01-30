@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import br.com.ehnois.springforum.dao.DAOAssunto;
-import br.com.ehnois.springforum.entidades.Assunto;
+import br.com.ehnois.springforum.entity.Assunto;
 
 @Component("daoAssunto")
 public class MockDAOAssunto extends MockDAOBase<Assunto> implements DAOAssunto {

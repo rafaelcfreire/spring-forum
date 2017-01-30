@@ -1,4 +1,4 @@
-package br.com.ehnois.springforum.controladores;
+package br.com.ehnois.springforum.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import br.com.ehnois.springforum.entidades.Usuario;
+import br.com.ehnois.springforum.entity.Usuario;
 
 @Controller
 public class HomeController {

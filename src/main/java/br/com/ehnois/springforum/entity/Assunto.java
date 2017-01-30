@@ -1,11 +1,11 @@
-package br.com.ehnois.springforum.entidades;
+package br.com.ehnois.springforum.entity;
 
 import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Entity @Table(name="assunto")
+//@Entity @Table(name="assunto")
 public class Assunto implements Serializable, Comparable<Assunto> {
 
 	/**

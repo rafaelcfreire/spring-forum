@@ -8,7 +8,7 @@ import java.util.Map;
 import org.springframework.stereotype.Component;
 
 import br.com.ehnois.springforum.dao.DAOUsuario;
-import br.com.ehnois.springforum.entidades.Usuario;
+import br.com.ehnois.springforum.entity.Usuario;
 
 @Component("br.com.ehnois.springforum.dao.DAOUsuario")
 public class MockDAOUsuario extends MockDAOBase<Usuario> implements DAOUsuario {

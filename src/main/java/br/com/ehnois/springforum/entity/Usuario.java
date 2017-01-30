@@ -1,4 +1,4 @@
-package br.com.ehnois.springforum.entidades;
+package br.com.ehnois.springforum.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
-@Entity @Table(name="usuario")
+//@Entity @Table(name="usuario")
 public class Usuario {
     @Size(max=128) @NotNull @NotEmpty
 	private String nome;

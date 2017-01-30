@@ -1,4 +1,4 @@
-package br.com.ehnois.springforum.entidades;
+package br.com.ehnois.springforum.entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -6,7 +6,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Entity @Table(name="topico")
+//@Entity @Table(name="topico")
 public class Topico implements Serializable {
 
 	/**

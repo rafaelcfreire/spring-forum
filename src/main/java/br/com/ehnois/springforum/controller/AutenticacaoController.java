@@ -1,4 +1,4 @@
-package br.com.ehnois.springforum.controladores;
+package br.com.ehnois.springforum.controller;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.ehnois.springforum.dao.DAOUsuario;
-import br.com.ehnois.springforum.entidades.Usuario;
+import br.com.ehnois.springforum.entity.Usuario;
 
 @Controller
 public class AutenticacaoController {
@@ -27,6 +27,11 @@ public class AutenticacaoController {
     	sessao.setAttribute("usuario", usuario);
     	return "usuarioAutenticado";
 	}
+	
+    @RequestMapping(value="/login", method=RequestMethod.GET)
+    public String validateLocale () {
+        return "usuarioAutenticado";
+    }
 
 	@RequestMapping(value="/loginFalho")
 	public ModelAndView retornaLoginFalho() {

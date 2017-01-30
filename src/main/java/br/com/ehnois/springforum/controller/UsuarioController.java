@@ -1,4 +1,4 @@
-package br.com.ehnois.springforum.controladores;
+package br.com.ehnois.springforum.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,8 +18,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.ehnois.springforum.dao.DAOTopico;
 import br.com.ehnois.springforum.dao.DAOUsuario;
-import br.com.ehnois.springforum.entidades.Topico;
-import br.com.ehnois.springforum.entidades.Usuario;
+import br.com.ehnois.springforum.entity.Topico;
+import br.com.ehnois.springforum.entity.Usuario;
 
 @Component
 @Controller("usuario")
